@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Game Survey</title>
+  <link rel="stylesheet" href="../static/style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!doctype HTML>
+<html>
+
+
+<div class='container'>
+  <header class='header'>
+    <h1 id='title' class='text-center'>Game Preference Survey</h1>
+    <p id='description' class='description-center'>Please help us understand what games you like!</p>
+  </header>
+  {% if message %}
+  <p class="message" style='text-align:center'>{{ message | safe }}</p>
+  {% endif %}
+  <form id='survey-form' action='/submit' method="POST">
+    <div class='form-group'>
+      <label id='name-label' for='name'>Name</label>
+      <input type='text' name='name' id='name' placeholder='Enter your name' class='form-control' required />
+    </div>
+    <div class='form-group'>
+      <label id='email-label' for='email'>Email</label>
+      <input type='email' name='email' id='email' placeholder='Enter your email' class='form-control' required />
+    </div>
+    <div class='form-group'>
+      <label id='number-label' for='age'>Age<span class='clue'>(Optional)</span></label>
+      <input type='number' name='age' id='number' placeholder='Age' min='10' max='99' class='form-control' />
+    </div>
+    <div class='form-group'>
+      <p>What genre are you interested in?</p>
+      <select id='dropdown' name='genre' required>
+        <option disabled selected value>Select your favorite genre</option>
+        <option value='rpg'>RPG</option>
+        <option value='fps'>FPS</option>
+        <option value='mmorpg'>MMORPG</option>
+        <option value='rts'>RTS</option>
+        <option value='moba'>MOBA</option>
+      </select>
+    </div>
+    <div class='form-group'>
+      <p>How many hours do you play a week?</p>
+      <label>
+        <input name='hours-played' type='radio' value='0-5' class='input-radio' checked />0-5</label>
+      <label>
+        <input name='hours-played' type='radio' value='5-10' class='input-radio' />5-10</label>
+      <label>
+        <input name='hours-played' type='radio' value='10+' class='input-radio' />10+</label>
+    </div>
+    <div class='form-group' required>
+      <p>What is your favorite game(s)<span class='clue'>(Check all that apply)</span></p>
+      <label>
+        <input value='none' checked type='checkbox' class='input-checkbox'/>None
+      </label>
+      <label>
+        <input name='favorite' value='call-of-duty' type='checkbox' class='input-checkbox' />Call of Duty</label>
+      <label>
+        <input name='favorite' value='halo' type='checkbox' class='input-checkbox' />Halo</label>
+      <label>
+        <input name='favorite' value='league-of-legends' type='checkbox' class='input-checkbox' />League of Legends</label>
+      <label>
+        <input name='favorite' value='world-of-warcraft' type='checkbox' class='input-checkbox' />World of Warcraft</label>
+      <label>
+        <input name='favorite' value='dota-2' type='checkbox' class='input-checkbox' />DOTA 2</label>
+    </div>
+    <div class='form-group'>
+      <p>Any other information you would like to add?</p>
+      <textarea id='comments' class='input-textarea' name='comment' placeholder='Enter your comments..'></textarea>
+    </div>
+    <div class='form-group'>
+      <button type='submit' id='submit' class='submit-button'>Submit</button>
+    </div>
+  </form>
+</div>
+
+</html>
+<!-- partial -->
+  
+</body>
+</html>
