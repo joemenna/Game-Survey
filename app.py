@@ -4,14 +4,14 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-ENV = 'dev'
+ENV = 'prod'
     
 if ENV == 'dev':
     app.debug = True
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:chichi30@localhost/Game Survey'
 else:
     app.debug == False
-    app.config['SQLALCHEMY_DATABASE_URI'] = ''
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://kmraszhsnxacee:425aa49af1d069f679c1669fb87717000e27fd2514f51ec09fdfad69204c40c1@ec2-52-71-107-99.compute-1.amazonaws.com:5432/d1d7rrdqbb7ud3'
 
 app.config['SQLAlCHEMY_TRACK-MODIFICATIONS'] = False
 
