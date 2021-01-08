@@ -25,7 +25,7 @@ class Feedback(db.Model):
     age = db.Column(db.Integer)
     genre = db.Column(db.String(200))
     hours_played = db.Column(db.String(200))
-    favorite = db.Column(db.List)
+    favorite = db.Column(db.String)
     comments = db.Column(db.Text())
 
     def __init__(self, name, email, age, genre, hours_played, favorite, comments):
@@ -50,7 +50,7 @@ def submit():
         age = request.form['age']
         genre = request.form['genre']
         hours_played = request.form['hours-played']
-        favorite = request.form.getlist['favorite']
+        favorite = request.form['favorite']
         comments = request.form['comment']
         #print(name, email, age, genre, hours_played, favorite, comments )
 
