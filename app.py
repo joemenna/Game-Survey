@@ -50,7 +50,7 @@ def submit():
         age = request.form['age']
         genre = request.form['genre']
         hours_played = request.form['hours-played']
-        favorite = request.form['favorite']
+        favorite = request.form.getlist['favorite']
         comments = request.form['comment']
         #print(name, email, age, genre, hours_played, favorite, comments )
 
