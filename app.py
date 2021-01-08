@@ -25,7 +25,7 @@ class Feedback(db.Model):
     age = db.Column(db.Integer)
     genre = db.Column(db.String(200))
     hours_played = db.Column(db.String(200))
-    favorite = db.Column(db.String)
+    favorite = db.Column(db.List)
     comments = db.Column(db.Text())
 
     def __init__(self, name, email, age, genre, hours_played, favorite, comments):
